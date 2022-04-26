@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div id="kopfzeile"><div id="kopfzeile-links">Leonard Lesinski</div><div id="kopfzeile-mitte">Tel.: +49 176 20697205</div><div id="kopfzeile-rechts">leo@le0x8.de</div></div>
+    <div id="kopfzeile"><div id="kopfzeile-links">{{name}}</div><div id="kopfzeile-mitte">Tel.: {{telefon}}</div><div id="kopfzeile-rechts">{{email}}</div></div>
     <div id="überschrift">Lebenslauf</div>
     <div id="persönliche-daten-überschrift" class="überschrift">Persönliche Daten</div>
     <hr>
     <div id="persönliche-daten">
-        <img id="foto" src="../../assets/olaf.jpg"><!-- hab auf die schnelle kein besseres gefunden -->
-        Leonard Lesinski<br>
-        Im Bremmen 14, 58300 Wetter (Ruhr)
+        <img id="foto" src="{{foto}}">
+        {{name}}<br>
+        {{adresse.strasse}} {{adresse.hausnummer}}, {{adresse.postleitzahl}} {{adresse.stadt}}
         <table>
             <tr>
                 <td>Telefon</td>
-                <td>+49 176 20697205</td>
+                <td>{{telefon}}</td>
             </tr>
             <tr>
                 <td>E-Mail</td>
-                <td><a href="mailto:leo@le0x8.de">leo@le0x8.de</a></td>
+                <td><a href="mailto:{{email}}">{{email}}</a></td>
             </tr>
             <tr>
                 <td>Geburtsdatum, -ort</td>
-                <td>28.05.2008 in Witten</td>
+                <td>{{geburt.tag}}.{{geburt.monat}}.{{geburt.jahr}} in {{geburt.stadt}}</td>
             </tr>
         </table>
     </div>
@@ -33,19 +33,12 @@
     <hr>
     <div id="bildungsweg">
         <table>
-            <tr>
-                <td>07/2025</td>
-                <td>Abitur am Geschwister-Scholl-Gymnasium Wetter (Ruhr) [voraussichtlich]</td>
-            </tr>
-            <tr>
-                <td>08/2017-07/2025</td>
-                <td>Geschwister-Scholl-Gymnasium Wetter (Ruhr)</td>
-            </tr>
-            <tr>
-                <td>08/2014-07/2017</td>
-                <td>Grundschule Osterfeldschule in Wetter (Ruhr)</td>
+            <tr *ngFor="let item of bildungsweg">
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
             </tr>
         </table>
+        
     </div>
     <div id="kenntnisse-und-fähigkeiten-überschrift" class="überschrift">Kenntnisse und Fähigkeiten</div>
     <hr>
@@ -79,6 +72,6 @@
     Wetter (Ruhr), 25. Apr. 2022
     <br><br>
     <img src="../../assets/unterschrift.png" id="unterschrift"><br>
-    <span class="überstrichen">Leonard Lesinski</span>
+    <span class="überstrichen">{{name}}</span>
 </body>
 </html>
