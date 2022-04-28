@@ -1,5 +1,5 @@
 <p>Persönliches</p>
-<input type="text" placeholder="Name" [(ngModel)]="name"><br>
+<input type="text" placeholder="Name" [(ngModel)]="name" (ngModelChange)="updateName"><br>
 <input type="text" placeholder="Telefon"><br>
 <input type="text" placeholder="E-Mail"><br>
 <label>Geburtsdatum: </label><input type="number" value="01"><input type="number" value="01"><input type="number" value="2000">
@@ -8,3 +8,4 @@
 <input type="text" placeholder="Hausnr."><br>
 <input type="text" placeholder="PLZ"><br>
 <input type="text" placeholder="Stadt"><br>
+<div routerLink="dashboard">klick</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-eingabe',
@@ -9,9 +10,13 @@ export class EingabeComponent implements OnInit {
 
   name: string = "Max Mustermann";
 
-  constructor() { }
+  constructor(private data:DataService) { }
 
   ngOnInit(): void {
+  }
+
+  updateName() {
+    this.data.setName(this.name)
   }
 
 }

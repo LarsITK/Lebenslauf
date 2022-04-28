@@ -1,5 +1,6 @@
 import { PropertyWrite } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 var hobbyArray = ["Schwimmen", "Klettern", "Programmieren", "Bildbearbeitung"];
 var hobbys = "";
@@ -17,7 +18,7 @@ for (var i = 0; hobbyArray.length > i; i++) {
 
 export class DashboardComponent implements OnInit {
 
-  name = "Max Mustermann";
+  name = this.data.getName();
   telefon = "+49 123 45678901";
   email = "jemand@example.com";
   adresse = {
@@ -60,7 +61,7 @@ export class DashboardComponent implements OnInit {
   ];
   hobbys = hobbys;
   datum = Date();
-  constructor() { };
+  constructor(private data:DataService) { };
 
   ngOnInit(): void {
   };
