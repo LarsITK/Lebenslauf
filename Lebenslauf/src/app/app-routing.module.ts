@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EingabeComponent } from './eingabe/eingabe.component';
 
 const routes: Routes = [
   {
@@ -8,8 +9,12 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: "eingabe",
+    component: EingabeComponent
+  },
+  {
     path: "**",
-    component: DashboardComponent
+    component: EingabeComponent
   }
 ];
 

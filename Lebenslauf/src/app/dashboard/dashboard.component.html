@@ -1,80 +1,73 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div id="kopfzeile"><div id="kopfzeile-links">{{name}}</div><div id="kopfzeile-mitte">Tel.: {{telefon}}</div><div id="kopfzeile-rechts">{{email}}</div></div>
+<div id="document">
+
+<header>
     <div id="ueberschrift">Lebenslauf</div>
-    <div id="persoenliche-daten-ueberschrift" class="ueberschrift">Persönliche Daten</div>
-    <hr>
-    <div id="persoenliche-daten">
-        <img id="foto" src="{{foto}}">
-        {{name}}<br>
-        {{adresse.strasse}} {{adresse.hausnummer}}, {{adresse.postleitzahl}} {{adresse.stadt}}
-        <table>
-            <tr>
-                <td>Telefon</td>
-                <td>{{telefon}}</td>
-            </tr>
-            <tr>
-                <td>E-Mail</td>
-                <td><a href="mailto:{{email}}">{{email}}</a></td>
-            </tr>
-            <tr>
-                <td>Geburtsdatum, -ort</td>
-                <td>{{geburt.tag}}.{{geburt.monat}}.{{geburt.jahr}} in {{geburt.stadt}}</td>
-            </tr>
-        </table>
+    <div id="kopfzeile">
+        <img id="foto" src="{{foto}}"><div id="name">{{name}}</div><div id="kontakt">{{telefon}}<span id="mail">{{email}}</span></div>
     </div>
-    <div id="bildungsweg-ueberschrift" class="ueberschrift">Bildungsweg</div>
-    <hr>
-    <div id="bildungsweg">
-        <table>
-            <tr *ngFor="let item of bildungsweg">
-                <td>{{item[0]}}</td>
-                <td>{{item[1]}}</td>
-            </tr>
-        </table>
-        
-    </div>
-    <div id="erfahrung-ueberschrift" class="ueberschrift" *ngIf="erfahrung.length > 0">Erfahrung</div>
-    <hr *ngIf="erfahrung.length > 0">
-    <div id="erfahrung" *ngIf="erfahrung.length > 0">
-        <table>
-            <tr *ngFor="let item of erfahrung">
-                <td>{{item[0]}}</td>
-                <td>{{item[1]}}</td>
-            </tr>
-        </table>
-        
-    </div>
+</header>
+
+<div id="persoenliche-daten-ueberschrift" class="ueberschrift">Persönliche Daten</div>
+<div id="persoenliche-daten">
+    
+    {{name}}<br>
+    {{adresse.strasse}} {{adresse.hausnummer}}, {{adresse.postleitzahl}} {{adresse.stadt}}
+    <table>
+        <tr>
+            <td>Telefon</td>
+            <td>{{telefon}}</td>
+        </tr>
+        <tr>
+            <td>E-Mail</td>
+            <td><a href="mailto:{{email}}">{{email}}</a></td>
+        </tr>
+        <tr>
+            <td>Geburtsdatum, -ort</td>
+            <td>{{geburt.tag}}.{{geburt.monat}}.{{geburt.jahr}} in {{geburt.stadt}}</td>
+        </tr>
+    </table>
+</div>
+<div id="bildungsweg-ueberschrift" class="ueberschrift">Bildungsweg</div>
+<div id="bildungsweg">
+    <table>
+        <tr *ngFor="let item of bildungsweg">
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+        </tr>
+    </table>  
+</div>
+<div id="erfahrung-ueberschrift" class="ueberschrift" *ngIf="erfahrung.length > 0">Erfahrung</div>
+<hr *ngIf="erfahrung.length > 0">
+<div id="erfahrung" *ngIf="erfahrung.length > 0">
+    <table>
+        <tr *ngFor="let item of erfahrung">
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+        </tr>
+    </table>
+</div>
+<div id="kenntnisse-und-faehigkeiten">
     <div id="kenntnisse-und-faehigkeiten-ueberschrift" class="ueberschrift">Kenntnisse und Fähigkeiten</div>
-    <hr>
-    <div id="kenntnisse-und-faehigkeiten">
-        Sprachkenntnisse
-        <ul>
-            <li *ngFor="let item of sprachkenntnisse">{{item[0]}} (<span *ngIf="item[1] == 0">Muttersprache</span><span *ngIf="item[1] == 1">sehr gute Kenntnisse</span><span *ngIf="item[1] == 2">gute Kenntnisse</span><span *ngIf="item[1] == 3">Grundkenntnisse</span>)</li>
-        </ul>
-        Computerkenntnisse
-        <ul>
-            <li *ngFor="let item of computerkenntnisse">{{item[0]}} (<span *ngIf="item[1] == 1">sehr gute Kenntnisse</span><span *ngIf="item[1] == 2">gute Kenntnisse</span><span *ngIf="item[1] == 3">Grundkenntnisse</span>)</li>
-        </ul>
-        <span *ngIf="sonstiges.length > 0">Sonstiges</span>
-        <ul *ngIf="sonstiges.length > 0">
-            <li *ngFor="let item of sonstiges">{{item}}</li>
-        </ul>
-    </div>
+    Sprachkenntnisse
+    <ul>
+        <li *ngFor="let item of sprachkenntnisse">{{item[0]}} (<span *ngIf="item[1] == 0">Muttersprache</span><span *ngIf="item[1] == 1">sehr gute Kenntnisse</span><span *ngIf="item[1] == 2">gute Kenntnisse</span><span *ngIf="item[1] == 3">Grundkenntnisse</span>)</li>
+    </ul>
+    Computerkenntnisse
+    <ul>
+        <li *ngFor="let item of computerkenntnisse">{{item[0]}} (<span *ngIf="item[1] == 1">sehr gute Kenntnisse</span><span *ngIf="item[1] == 2">gute Kenntnisse</span><span *ngIf="item[1] == 3">Grundkenntnisse</span>)</li>
+    </ul>
+    <span *ngIf="sonstiges.length > 0">Sonstiges</span>
+    <ul *ngIf="sonstiges.length > 0">
+        <li *ngFor="let item of sonstiges">{{item}}</li>
+    </ul>
+</div>
+<div id="hobbys-und-interessen">
     <div id="hobbys-und-interessen-ueberschrift" class="ueberschrift">Hobbys und Interessen</div>
-    <hr>
-    <div id="hobbys-und-interessen">
-        <span *ngFor="let item of hobbys">{{item}}</span>
-    </div><br><br>
-    {{adresse.stadt}}, {{datum | date: 'dd.MM.yyyy'}}
-    <br><br>
-    <img src="../../assets/unterschrift.png" id="unterschrift"><br>
-    <span class="ueberstrichen">{{name}}</span>
-</body>
-</html>
+    
+    {{hobbys}}
+</div><br><br>
+{{adresse.stadt}}, {{datum | date: 'dd.MM.yyyy'}}
+<br><br>
+<img src="../../assets/unterschrift.png" id="unterschrift"><br>
+<span class="ueberstrichen">{{name}}</span>
+</div>
