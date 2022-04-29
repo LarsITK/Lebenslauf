@@ -19,8 +19,8 @@ for (var i = 0; hobbyArray.length > i; i++) {
 export class DashboardComponent implements OnInit {
 
   name = this.data.getName();
-  telefon = "+49 123 45678901";
-  email = "jemand@example.com";
+  telefon = this.data.getTelefon();
+  email = this.data.getEmail();
   adresse = {
     "strasse": "Musterstraße",
     "hausnummer": "123",
@@ -61,6 +61,7 @@ export class DashboardComponent implements OnInit {
   ];
   hobbys = hobbys;
   datum = Date();
+  unterschrift = "../../assets/unterschrift.png";
   constructor(private data:DataService) { };
 
   ngOnInit(): void {

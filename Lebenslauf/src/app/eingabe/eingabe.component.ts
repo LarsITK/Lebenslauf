@@ -8,15 +8,34 @@ import { DataService } from '../data.service';
 })
 export class EingabeComponent implements OnInit {
 
-  name: string = "Max Mustermann";
+  foto!: any;
+  name!: string;
+  telefon!: string;
+  email!: string;
+
+  imageError!: string;
+  isImageSaved!: boolean;
+  cardImageBase64!: string;
 
   constructor(private data:DataService) { }
 
   ngOnInit(): void {
   }
 
+  updateFoto(event: any) {
+    var fotoUrl: any
+    const reader = new FileReader();
+    reader.addEventListener("load", event => {fotoUrl = event.target?.result; this.data.setFoto(fotoUrl)})
+    reader.readAsDataURL(event.target.files[0])
+  }
   updateName() {
     this.data.setName(this.name)
   }
-
+  updateTelefon() {
+    this.data.setTelefon(this.telefon)
+  }
+  updateEmail() {
+    this.data.setEmail(this.email)
+  }
 }
+

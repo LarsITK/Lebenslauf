@@ -7,3 +7,8 @@ header {background-color: #505050; display: flex; justify-content: center; align
 #name {float: right; color: #ffffff; font-family: Calibri, sans-serif; font-size: 5em; font-weight: lighter; margin: auto 0;}
 #kontakt {font-family: Calibri, sans-serif; color: #ffffff; clear: both; width: 100%; text-align: center; font-size: 1.25em;}
 #mail {margin-left: 1em; border-left: 1px solid #ffffff; padding-left: 1em;}
+
+#content {height: max-content; width: 100%; margin: 1em 0;}
+#left {position: relative; top: 0; left: 0; width: 49.75%; background-color: #ffffff; height: 100%; float: left; padding: 0%;}
+#middle {float: left; color: #509010; background-color: #509010; width: 0.5%; text-align: center;}
+#right {position: relative; top: 0; right: 0; width: 49.75%; background-color: #ffffff; height: 100%; float: right;}

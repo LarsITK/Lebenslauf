@@ -7,11 +7,20 @@
     </div>
 </header>
 
+
+<div id="content">
+    <div id="left">
+        {{name}}<br>
+    {{adresse.strasse}} {{adresse.hausnummer}}, {{adresse.postleitzahl}} {{adresse.stadt}}
+    </div><div id="middle">.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.</div>
+    <div id="right">rechts</div>
+</div>
+
+<!--
 <div id="persoenliche-daten-ueberschrift" class="ueberschrift">Persönliche Daten</div>
 <div id="persoenliche-daten">
     
-    {{name}}<br>
-    {{adresse.strasse}} {{adresse.hausnummer}}, {{adresse.postleitzahl}} {{adresse.stadt}}
+    
     <table>
         <tr>
             <td>Telefon</td>
@@ -68,6 +77,6 @@
 </div><br><br>
 {{adresse.stadt}}, {{datum | date: 'dd.MM.yyyy'}}
 <br><br>
-<img src="../../assets/unterschrift.png" id="unterschrift"><br>
-<span class="ueberstrichen">{{name}}</span>
+<img src="{{unterschrift}}" id="unterschrift"><br>
+<span class="ueberstrichen">{{name}}</span>-->
 </div>
